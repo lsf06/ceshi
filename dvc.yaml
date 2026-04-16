@@ -1,0 +1,13 @@
+# DVC 管道配置
+stages:
+  train:
+    cmd: python src/ml/train.py
+    deps:
+      - src/ml/train.py
+      - data/dataset.csv
+    params:
+      - lr
+      - epochs
+    metrics:
+      - metrics.json:
+          cache: true
