@@ -18,7 +18,8 @@ class TransformerModel(nn.Module):
 
 def train():
     """模型训练入口"""
-    print("开始训练 Transformer 模型...")
+    print("开始训练 Transformer 模型 v2...")
+    print("[HOTFIX] 修复模型加载问题")
     
     # 创建模型
     model = TransformerModel(input_dim=10)
