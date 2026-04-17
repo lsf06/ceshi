@@ -19,10 +19,9 @@ class TransformerModel(nn.Module):
         encoder_layer = nn.TransformerEncoderLayer(
             d_model=self.d_model,
             nhead=config["nhead"],
-            num_layers=config["num_layers"],
             dropout=config["dropout"]
         )
-        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=1)
+        self.transformer = nn.TransformerEncoder(encoder_layer, num_layers=config["num_layers"])
         self.classifier = nn.Linear(self.d_model, 2)
     
     def forward(self, x):
